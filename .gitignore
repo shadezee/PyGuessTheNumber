@@ -1,0 +1,16 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Folders
+.vs/
+.vscode
+ExecutableEnviornment/
+
+# temp ignore V4
+V4/
+
+# Ignore all folders named "log" and log/key files
+**/log/
+*.log
+*.key

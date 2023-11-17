@@ -1,0 +1,133 @@
+Guess The Number developer notes
+
+1.0 original
+
+2.0.0 Code rewrite
+    **EXPECTED CHANGES**
+    reduce length
+    better formatting
+
+    **IMPLEMENTED CHANGES**
+    CHANGES
+    changes length to 37 from 47
+    removes pyperclip functionality
+    changes variable name for the number of attempts and player name
+    dissolves objective function
+    rewrites the entire decision loop
+        merges the previous loop for 'out of attempts' with the 'main loop.'
+2.0.1 Allow replay functionality
+    **EXPECTED CHANGES**
+    the program allows the user to replay the game
+        this automatically stops the command prompt from abruptly closing after the completion
+    
+    **IMPLEMENTED CHANGES**
+    NEW
+    adds the replay function
+
+    CHANGES
+    changes length to 55 from 47 
+    brings back objective function
+    wraps the entire decision loop into a function named guessGame 
+        adds an argument inputSec
+            inputSec is the secret number that will change every time the loop runs
+        adds a 'break' keyword after every decision
+        initializes replay function after the loop end
+    the objective function now acts as the primary game running function as it will initiate the guessGame loop  
+2.1 Initiating logging
+    **EXPECTED CHANGES**
+    the program should create a new folder in the directory of the running python application
+    the folder should have a log file with various details of the running program.
+    the program should make a copy of any pre-existing log before replacing it with a new one
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 93 from 55 
+    imports os, shutil and logging
+    writes log in .log instead of .txt 
+    stores various paths in new variables
+    creates a log directory in the application's current working directory
+    creates a backup of the previous log (if any)
+    adds various logging instances
+2.2 
+    **EXPECTED CHANGES**
+    none
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 107 from 93
+    logs the version of the program
+    adds a function systemInfo to log system information
+    calls it directly after the definition
+2.3 Exception management
+    **EXPECTED CHANGES**
+    the program can manage standard exceptions
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 141 from 107
+    introduces inValidChoiceException made for replay function
+    adds try-except in replay and  guessGame
+
+    CHANGES
+    RAM now logs up to 4 decimal places
+    minor change in objective
+    introduces a variable 'a' to break the 'while-loop' in guessGame
+2.5 Code cleanup and rewrite
+    **EXPECTED CHANGES**
+    none
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 164 from 141
+    adds function cycleOne to skip game objective
+    adds a warning for the user before shutting the application
+    removes break from except clauses
+        this fixes the error of not taking inputs again if user enters invalid option
+
+    CHANGES
+    changes variable names to make them more meaningful
+    changes primary function to cycleOne from objective
+    adds a pass instead of print for FileNotFoundError
+2.7 Cryptography
+    **EXPECTED CHANGES**
+    encrypts log files
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 186 from 164
+    imports Fernet from cryptography library
+    adds enc function to encrypt the log file
+
+    CHANGES
+    none
+3.0 Introduce new variation
+    **EXPECTED CHANGES**
+    the game should implement code to introduce a new variety of guess the number
+
+    **IMPLEMENTED CHANGES**
+    NEW
+    changes length to 384 from 164 
+    adds counter to calculate the total time taken to complete program execution
+    fixes bug occurring since V2.3 where decision was out of attempts even when user guessed right 
+    adds Type2 mode for more logical training
+        creates 2 classes to differentiate between the 2 modes
+
+    CHANGES
+    approach object oriented programming
+    further changes to variable names
+    main functions now in class GTNClass
+        uses objects to return important values
+    changes primary function to start from cycleOne
+    minor changes in comparison loop
+
+
+**PLANNED FOR FUTURE BUILDS**
+4.0 Initialize GUI
+    **EXPECTED CHANGES**
+    well designed gui
+
+    **IMPLEMENTED CHANGES**
+    NEW
+
+    CHANGES
+4.7 Allow GUI customization
